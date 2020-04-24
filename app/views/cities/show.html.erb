@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<p> <%= @city.title%> </p>
+
+<% @activities.each do |activity|%>
+
+<%= activity.image %>
+<%= image_tag (activity.image)%>
+
+<%end%>
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>
