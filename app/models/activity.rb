@@ -7,6 +7,8 @@ class Activity < ApplicationRecord
     	CSV.foreach(file.path, headers: true) do |row|
 			activities_hash = row.to_hash
 			activities_hash[:city] = City.find_by(name: row[3])
+			activities_hash[:price] = 10
+
 			#activities_hash[:theme] = Theme.where(name: row[5]).first
 			Activity.create! activities_hash
 		end
