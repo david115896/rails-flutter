@@ -40,4 +40,25 @@ Tripactivity.create!(activity: act1, trip: Trip.find_by(city: City.find_by(name:
 Tripactivity.create!(activity: act2, trip: Trip.find_by(city: City.find_by(name:"Zagreb")))
 Tripactivity.create!(activity: act3, trip: Trip.find_by(city: City.find_by(name:"Zagreb")))
 
+Theme.create!(name_fr: "Monmuents", name_eng: "Monuments")
+Theme.create!(name_fr: "Points de vue", name_eng: "Points of view")
+Theme.create!(name_fr: "Site religieux", name_eng: "Religious site")
+Theme.create!(name_fr: "Spectacles / Animations", name_eng: "Shows / Animations")
+Theme.create!(name_fr: "Quartiers", name_eng: "Neighborhoods")
+Theme.create!(name_fr: "Centre commerciaux / Boutiques", name_eng: "Shopping area & Mall")
+Theme.create!(name_fr: "Musées d'art", name_eng: "Art museums")
+Theme.create!(name_fr: "Sites historiques", name_eng: "Historic sites")
+Theme.create!(name_fr: "Jardins et Parcs", name_eng: "Parks & Gardens")
+Theme.create!(name_fr: "Les plus visités", name_eng: "Landmarks")
+
+
+
+
+
+
+
+
+
+
+
 puts "Database created"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_135028) do
+ActiveRecord::Schema.define(version: 2020_04_28_152246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,22 @@ ActiveRecord::Schema.define(version: 2020_04_28_135028) do
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description_fr"
+    t.string "description_eng"
+    t.float "duration"
+    t.string "local_name"
+    t.string "name_eng"
+    t.string "name_fr"
+    t.string "website"
+    t.string "note_hours"
+    t.string "note_price"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.boolean "show"
+    t.bigint "theme_id"
     t.index ["city_id"], name: "index_activities_on_city_id"
+    t.index ["theme_id"], name: "index_activities_on_theme_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -43,6 +58,13 @@ ActiveRecord::Schema.define(version: 2020_04_28_135028) do
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_photos_on_activity_id"
     t.index ["city_id"], name: "index_photos_on_city_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "name_fr"
+    t.string "name_eng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tripactivities", force: :cascade do |t|
