@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_135843) do
+ActiveRecord::Schema.define(version: 2020_04_28_135028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,11 +32,25 @@ ActiveRecord::Schema.define(version: 2020_04_24_135843) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.string "url"
+    t.string "admin"
+    t.integer "pos"
+    t.string "post_link"
+    t.bigint "activity_id"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_photos_on_activity_id"
+    t.index ["city_id"], name: "index_photos_on_city_id"
+  end
+
   create_table "tripactivities", force: :cascade do |t|
     t.bigint "activity_id"
     t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "ongoing"
     t.index ["activity_id"], name: "index_tripactivities_on_activity_id"
     t.index ["trip_id"], name: "index_tripactivities_on_trip_id"
   end

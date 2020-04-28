@@ -70,7 +70,7 @@ class TripsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trip_params
-      params.require(:trip).permit(:id, :date, :city_id, tripactivities_attributes: [:id, :activity_id])
+      params.require(:trip).permit(:id, :date, :city_id, tripactivities_attributes: [:id, :activity_id, :ongoing])
 
       #params.fetch(:trip, {})
     end

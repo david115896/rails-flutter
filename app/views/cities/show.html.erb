@@ -1,10 +1,14 @@
 <p id="notice"><%= notice %></p>
 <p> <%= @city.name%> </p>
 
-<% @activities.each do |activity|%>
+<% @city.activities.each do |activity|%>
+     <%= activity.name %>
+        <%= image_tag (activity.image)%>
+    <% activity.photos.each do |photo|%>
 
-<%= activity.image %>
-<%= image_tag (activity.image)%>
+        <%= photo.url %>
+        <%= image_tag (photo.url)%>
+    <%end%>
 
 <%end%>
 <%= link_to 'Edit', edit_city_path(@city) %> |
