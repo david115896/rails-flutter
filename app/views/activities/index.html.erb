@@ -5,7 +5,7 @@
  <div class= "col-5">
       <div class="ml-5 mb-2 ">     <!-- CSV Uploader tickets-->
         <h5> Import Activities </h5>
-        <%= form_with scope: :ticket, url: import_city_activities_path, local: true, method: :post  do |form| %>
+        <%= form_with scope: :activity, url: import_city_activities_path, local: true, method: :post  do |form| %>
           
           <div class="form-inline">
             <%= form.file_field :file %>
@@ -25,7 +25,7 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-              <td><%= activity.name %></td>
+              <td><%= activity.name_fr %></td>
 
         <td><%= link_to 'Show', city_activity_path(activity.city.id, activity.id) %></td>
         <td><%= link_to 'Edit', edit_city_activity_path(activity.city.id, activity.id) %></td>
