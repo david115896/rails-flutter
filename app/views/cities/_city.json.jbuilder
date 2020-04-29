@@ -1,4 +1,4 @@
-json.extract! city, :id, :name
+json.extract! city, :id, :name, :image
 
 json.activities city.activities do |activity|
 
