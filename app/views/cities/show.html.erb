@@ -3,7 +3,6 @@
 
 <% @city.activities.each do |activity|%>
      <%= activity.name %>
-        <%= image_tag (activity.image)%>
     <% activity.photos.each do |photo|%>
 
         <%= photo.url %>

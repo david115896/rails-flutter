@@ -15,6 +15,20 @@
       </div>
     </div>
 
+ <div class= "col-5">
+      <div class="ml-5 mb-2 ">     <!-- CSV Uploader tickets-->
+        <h5> Import photos </h5>
+        <%= form_with scope: :photo, url: import_city_photos_path(@city.id), local: true, method: :post  do |form| %>
+          
+          <div class="form-inline">
+            <%= form.file_field :file %>
+            <%= form.submit "Upload", class:"" %>
+          </div>
+        <%end %>
+      </div>
+    </div>
+
+
 <table>
   <thead>
     <tr>

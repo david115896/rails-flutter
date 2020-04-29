@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+    @city = City.find(params[:city_id])
   end
 
   def show
