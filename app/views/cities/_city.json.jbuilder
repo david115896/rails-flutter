@@ -1,7 +1,7 @@
 #json.extract! city, :id, :name, :activities
 
 json.cities @cities do |city|
-    json.(city, :id, :name)
+    json.(city, :id, :image,:name)
 
     json.activities city.activities do |activity|
         json.(activity, :id, :name_fr)
