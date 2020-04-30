@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activities = Activity.all
+    @activities = Activity.where(city_id: params[:city_id])
     @city = City.find(params[:city_id])
   end
 
