@@ -2,7 +2,7 @@ json.extract! city, :id, :name, :image
 
 json.activities city.activities do |activity|
 
-    json.(activity, :id, :name_fr, :price, :description_fr, :website, :latitude, :longitude)
+    json.(activity, :id, :name_fr, :price, :description_fr, :website, :address, :latitude, :longitude)
 
     json.photos activity.photos do |photo|
         json.(photo, :id, :url, :admin, :post_link)
