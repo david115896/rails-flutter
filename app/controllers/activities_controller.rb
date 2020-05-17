@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @photos = Photo.where(activity: @activity)
   end
 
   def new

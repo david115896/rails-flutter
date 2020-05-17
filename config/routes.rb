@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :themelists
   resources :themes
   root :to => "cities#index" 
 
